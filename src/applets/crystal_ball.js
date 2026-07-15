@@ -11,7 +11,6 @@ export default function CrystalBall() {
   }
 
   async function predict() {
-    const question = questionBox.current.value;
     setAnswer(null);
     await sleep(2000);
     setAnswer(Math.random() < 0.5 ? "Yes" : "No");

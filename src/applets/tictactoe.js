@@ -32,9 +32,9 @@ export default function TicTacToe() {
   const winningPlayer = winner(board);
 
   function play(row, col) {
-	if (winner(board) != 0) {
+	if (winner(board) !== 0) {
 		// cant make moves after someone won
-	} else if (board[row][col] != 0) {
+	} else if (board[row][col] !== 0) {
 		// cant override a cell
 	} else {	
 		const nextBoard = board.map(row => [...row]);
@@ -54,7 +54,7 @@ export default function TicTacToe() {
     <main>
       <h1>Tic Tac Toe</h1>
       <p>
-        {winner(board) == 0 ? `Turn: ${SYMBOLS[turn]}` : `${SYMBOLS[winningPlayer]} wins!`}
+        {winner(board) === 0 ? `Turn: ${SYMBOLS[turn]}` : `${SYMBOLS[winningPlayer]} wins!`}
       </p>
 		<table
 			style={{fontFamily: "monospace"}}>

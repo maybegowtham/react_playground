@@ -10,7 +10,28 @@
 .live{border:2px solid #777;border-radius:10px;padding:1em}
 .diagram{font-family:monospace;font-size:1.1em}
 pre{font-size:.7em}
-</style></head><body>
+.slide-footer {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-family: monospace;
+  z-index: 100;
+}
+
+.slide-footer:hover {
+  color: white;
+  text-decoration: underline;
+}
+</style></head>
+<a class="slide-footer"
+   href="https://maybegowtham.github.io/react_playground"
+   target="_blank">
+  slides @ maybegowtham.github.io/react_playground
+</a>
+<body>
 <div class="reveal"><div class="slides">
 <section><h1>React Crash Course</h1></section>
 <section><h2>Introduction to the Web</h2><div class=diagram>Browser -> HTTP -> Server</div><p>HTML • CSS • JavaScript</p></section>

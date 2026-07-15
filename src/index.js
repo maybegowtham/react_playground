@@ -2,13 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Counter from './applets/counter';
-import Stopwatch from './applets/stopwatch';
-import CrystalBall from './applets/crystal_ball';
-import DuckHunt from './applets/duck_hunt';
-import PizzaBuilder from './applets/pizza';
-import TicTacToe from './applets/tictactoe';
-import TodoApp from './applets/todo';
 import App from './applets/home';
 import { BrowserRouter } from 'react-router-dom';
 

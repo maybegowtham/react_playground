@@ -5,7 +5,7 @@ export default function TodoApp() {
   const [todos, setTodos] = useState([]);
 
   function addTodo(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const text = inputRef.current.value;
     if (!text.trim()) return;
     const nextTodos = [...todos];

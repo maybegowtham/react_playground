@@ -10,18 +10,6 @@ import TodoApp from "./todo";
 import Snake from "./snake";
 import Pokedex from "./pokedex";
 
-const apps = [
-  { icon: "🔢", name: "Counter", path: "/counter" },
-  { icon: "⏱️", name: "Stopwatch", path: "/stopwatch" },
-  { icon: "🔮", name: "Crystal Ball", path: "/crystal-ball" },
-  { icon: "📝", name: "Todo", path: "/todo" },
-  { icon: "🦆", name: "Duck Hunt", path: "/duck-hunt" },
-  { icon: "🍕", name: "Pizza Builder", path: "/pizza" },
-  { icon: "⭕", name: "Tic Tac Toe", path: "/tictactoe" },
-  { icon: "🐍", name: "Snake", path: "/snake" },
-  { icon: "🔴", name: "Pokedex", path: "/pokedex"}
-];
-
 export default function App() {
   return (
     <Routes>
@@ -38,8 +26,8 @@ export default function App() {
       <Route path="/duck-hunt" element={<DuckHunt />} />
       <Route path="/pizza" element={<PizzaBuilder />} />
       <Route path="/tictactoe" element={<TicTacToe />} />
-	  <Route path="/snake" element={<Snake/> }/>
-	  <Route path="/pokedex" element={<Pokedex/> }/>
+      <Route path="/snake" element={<Snake />} />
+      <Route path="/pokedex" element={<Pokedex />} />
     </Routes>
   );
 }
@@ -49,13 +37,66 @@ function Home() {
     <main>
       <h1>React Playground</h1>
 
-      {apps.map(app => (
-        <p key={app.path}>
-          <Link to={app.path}>
-            {app.icon} {app.name}
-          </Link>
-        </p>
-      ))}
+      <p>
+        <Link to="/counter">
+          🔢 Counter
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/stopwatch">
+          ⏱️ Stopwatch
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/crystal-ball">
+          🔮 Crystal Ball
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/todo">
+          📝 Todo
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/duck-hunt">
+          🦆 Duck Hunt
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/pizza">
+          🍕 Pizza Builder
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/tictactoe">
+          ⭕ Tic Tac Toe
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/snake">
+          🐍 Snake
+        </Link>
+      </p>
+
+      <p>
+        <Link to="/pokedex">
+          🔴 Pokedex
+        </Link>
+      </p>
+
+      <footer>
+        slides @{" "}
+        <a href="https://maybegowtham.github.io/react_playground/">
+          maybegowtham.github.io/react_playground
+        </a>
+      </footer>
     </main>
   );
 }

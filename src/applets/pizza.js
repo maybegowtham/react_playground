@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import base from "./pizza_base.png";
+import { NameContext } from "./home";
 
 const TOPPINGS = ["🍄", "🧀", "🌽", "🍍", "🧅", "🌶️", "🫑"];
 
@@ -17,6 +18,7 @@ const BASE_PRICE = 299;
 const SIZE = 500;
 
 export default function PizzaBuilder() {
+  const {name} = useContext(NameContext);
   const canvasRef = useRef(null);
 
   const [selected, setSelected] = useState(TOPPINGS[0]);
@@ -62,8 +64,8 @@ export default function PizzaBuilder() {
   }, [pizza]);
 
   return (
-    <main style={{ textAlign: "center" }}>
-      <h1>🍕 Pizza Builder</h1>
+    <main>
+      <h1>🍕 Make a pizza, {name == "" ? "???" : name} </h1>
 
       <h2>Total: ₹{calculateTotal()}</h2>
 

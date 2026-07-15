@@ -1,13 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NameContext } from "./home";
 
 const WIDTH = 400;
 const HEIGHT = 300;
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export default function DuckHunt() {
+	const {name} = useContext(NameContext)
 	const [score, setScore] = useState(0);
 	const [duck, setDuck] = useState({
 		x: WIDTH / 2,
@@ -23,22 +21,21 @@ export default function DuckHunt() {
 				...duck,
 				alive: false,
 			}));
-			
-			await sleep(200);
-			
-			setDuck({
-				x: Math.random() * (WIDTH - 40),
-				y: Math.random() * (HEIGHT - 40),
-				alive: true,
-			});
+			setTimeout(() => {
+				setDuck({
+					x: Math.random() * (WIDTH - 40),
+					y: Math.random() * (HEIGHT - 40),
+					alive: true,
+				});
+			}, 200);
 		}
 	}
 
   return (
     <main>
-      <h1>🔫 Duck Hunt</h1>
+      <h1>🔫 Hunt em, {name == "" ? "???" : name}!</h1>
 
-      <p>Score: {score}</p>
+      <h2>Score: {score}</h2>
 
       <figure
         style={{
@@ -53,6 +50,7 @@ export default function DuckHunt() {
             position: "absolute",
             left: duck.x,
             top: duck.y,
+			cursor: "crosshair",
           }}>
           {duck.alive ? "🦆" : "💥"}
         </p>

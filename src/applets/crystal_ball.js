@@ -1,30 +1,27 @@
-import { useRef, useState } from "react";
-
+import { useContext, useRef, useState } from "react";
+import {NameContext} from "./home"
 export default function CrystalBall() {
+	const { name } = useContext(NameContext);
+
   const questionBox = useRef(null);
   const [answer, setAnswer] = useState("");
 
-  function sleep(milliseconds) {
-    return new Promise(resolve => {
-      setTimeout(resolve, milliseconds);
-    });
-  }
-
   async function predict() {
     setAnswer(null);
-    await sleep(2000);
-    setAnswer(Math.random() < 0.5 ? "Yes" : "No");
+	setTimeout(() => {
+		setAnswer(Math.random() < 0.5 ? "Yes" : "No");
+	}, 2000);
   }
 
   return (
     <main>
-		<h1>🔮 Crystal Ball</h1>
+		<h1>🔮 Welcome Back, {name == "" ? "???" : name} </h1>
 
 		<input ref={questionBox} placeholder="Ask a yes/no question..." />
 
 		<button onClick={predict}> Ask </button>
 		
-		{answer === null ? <p>⏳ Thinking...</p> : <h2>{answer}</h2>}
+		{answer === null ? <h2>⏳ Thinking...</h2> : <h2>{answer}</h2>}
     </main>
   );
 }

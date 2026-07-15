@@ -53,9 +53,9 @@ export default function TicTacToe() {
   return (
     <main>
       <h1>Tic Tac Toe</h1>
-      <p>
-        {winner(board) === 0 ? `Turn: ${SYMBOLS[turn]}` : `${SYMBOLS[winningPlayer]} wins!`}
-      </p>
+      <h2>
+        {winner(board) === 0 ? `${SYMBOLS[turn]}'s turn` : `${SYMBOLS[winningPlayer]} wins!`}
+      </h2>
 		<table
 			style={{fontFamily: "monospace"}}>
 			<tbody>

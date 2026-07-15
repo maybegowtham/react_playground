@@ -32,11 +32,9 @@ export default function Counter({
   return (
     <>
       <h1>{title}</h1>
-
       <button onClick={handleIncrement}>+{step}</button>
       <button onClick={handleDecrement}>-{step}</button>
       <button onClick={handleReset}>Reset</button>
-
       <h2>{count}</h2>
     </>
   );

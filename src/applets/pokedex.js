@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NameContext } from "./home";
 
 export default function Pokedex() {
+  const {name: username} = useContext(NameContext);
+
   const [name, setName] = useState("");
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState("");
@@ -13,16 +16,11 @@ export default function Pokedex() {
     setPokemon(null);
 
     try {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`
-      );
-
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
       if (!response.ok) {
         throw new Error("Pokemon not found");
       }
-
       const data = await response.json();
-
       setPokemon(data);
     } catch (error) {
       setError(error.message);
@@ -33,7 +31,7 @@ export default function Pokedex() {
 
   return (
     <main>
-      <h1>🔴 Pokédex</h1>
+      <h1>🔴 Gotta catch em all, {username == "" ? "???" : username}!</h1>
 
       <form onSubmit={search}>
         <input
@@ -41,10 +39,6 @@ export default function Pokedex() {
           placeholder="Pokemon name"
           onChange={e => setName(e.target.value)}
         />
-
-        <button>
-          Search
-        </button>
       </form>
 
       {loading && (
@@ -57,27 +51,13 @@ export default function Pokedex() {
 
       {pokemon && (
         <section>
-          <h2>
-            {pokemon.name}
-          </h2>
+          <h2> {pokemon.name} </h2>
 
-          <img
-            src={pokemon.sprites.front_default}
-            alt={pokemon.name}
-          />
+          <img src={pokemon.sprites.front_default}/>
 
-          <p>
-            Height: {pokemon.height}
-          </p>
+          <h2> Height {pokemon.height} |  Weight {pokemon.weight} </h2>
 
-          <p>
-            Weight: {pokemon.weight}
-          </p>
-
-          <h3>
-            Types
-          </h3>
-
+          <h2> Types </h2>
           <ul>
             {pokemon.types.map(type => (
               <li key={type.type.name}>
@@ -86,10 +66,7 @@ export default function Pokedex() {
             ))}
           </ul>
 
-          <h3>
-            Abilities
-          </h3>
-
+          <h2> Abilities </h2>
           <ul>
             {pokemon.abilities.map(ability => (
               <li key={ability.ability.name}>

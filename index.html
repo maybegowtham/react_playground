@@ -1,83 +1,108 @@
-
-<!doctype html><html><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>React Crash Course</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
-<style>
-:root{--r-heading-text-transform:none}
-.live{border:2px solid #777;border-radius:10px;padding:1em}
-.diagram{font-family:monospace;font-size:1.1em}
-pre{font-size:.7em}
-.slide-footer {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  font-size: 24px;
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  font-family: monospace;
-  z-index: 100;
-}
-
-.slide-footer:hover {
-  color: white;
-  text-decoration: underline;
-}
-</style></head>
-<a class="slide-footer"
-   href="https://maybegowtham.github.io/react_playground"
-   target="_blank">
-  slides @ maybegowtham.github.io/react_playground
-</a>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React Crash Course</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+  <style>
+    :root{--r-heading-text-transform:none}
+    .live{border:2px solid #777;border-radius:10px;padding:1em}
+    .diagram{font-family:monospace;font-size:1.1em}
+    pre{font-size:.7em}
+    .slide-footer{
+      position:fixed;bottom:15px;left:15px;
+      font-size:16px;color:rgba(255,255,255,.6);
+      text-decoration:none;font-family:monospace;z-index:100;
+    }
+    .slide-footer:hover{color:#fff;text-decoration:underline}
+  </style>
+</head>
 <body>
-<div class="reveal"><div class="slides">
+<div class="reveal">
+<div class="slides">
+
 <section><h1>React Crash Course</h1></section>
-<section><h2>Introduction to the Web</h2><div class=diagram>Browser -> HTTP -> Server</div><p>HTML • CSS • JavaScript</p></section>
-<section><h2>What is React?</h2><div class=diagram>State -> UI</div></section>
+<section><h2>Introduction to the Web</h2><div class="diagram">Browser → HTTP → Server</div><p>HTML & CSS & JavaScript</p></section>
+<section><h2>What is React?</h2><div class="diagram">UI = f(state)</div></section>
 <section><h2>Folder Structure</h2><pre><code>src/
   main.jsx
   App.jsx
   index.css
 public/
 package.json</code></pre></section>
+<section><h2>JSX</h2><pre><code>&lt;h1&gt;Hello {name}&lt;/h1&gt;</code></pre></section>
+<section><h2>Components</h2><pre><code>function Greeting() {
+  return <h1>Hello, Gowtham!</h1>;
+}</code></pre></section>
 <section><h2>Browser DevTools</h2><ul><li>Elements</li><li>Console</li><li>Network</li></ul></section>
 <section><h2>React DevTools</h2><ul><li>Components</li><li>Props</li><li>State</li></ul></section>
-<section><h2>JSX</h2><pre><code>&lt;h1&gt;Hello {name}&lt;/h1&gt;</code></pre></section>
-<section><h2>Components</h2><pre><code>function Button() {
-  return &lt;button&gt;Click&lt;/button&gt;
-}</code></pre></section>
-<section><h2>Props</h2><div class=diagram>Parent --props--> Child</div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Hello React</h1><p>JSX • Components • Props</p></div></section>
+<section><h2>Props</h2>
+	<div class="diagram">Parent --props--> Child</div>
+	<pre><code>function Greeting({ name }) {
+	return <h1>Hello, {name}!</h1>;
+}</code></pre>
+</section>
 <section><h2>Events</h2><pre><code>&lt;button onClick={handleClick}&gt;</code></pre></section>
-<section><h2>Rendering</h2><div class=diagram>Event -> setState() -> Render -> JSX -> DOM</div></section>
+<section><h2>Rendering</h2><img src="https://www.bacancytechnology.com/blog/wp-content/uploads/2023/04/Initial-Render.webp"></section>
 <section><h2>useState</h2><pre><code>const [state, setState] = useState(...)</code></pre></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Counter</h1><p>Events • Rendering • useState</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Crystal Ball</h1><p>Randomness • State</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Pizza Builder</h1><p>Lists • map() • Conditional UI</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Duck Hunt</h1><p>Mouse Events • State • Styling</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Tic Tac Toe</h1><p>Arrays • Derived State</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Counter</h1><p>Events & State</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Crystal Ball</h1><p>Randomness & & Timing</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Duck Hunt</h1><p>Mouse Events & Timing</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Todo App</h1><p>Lists & Refs</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Tic Tac Toe</h1><p>2D Lists & Logic</p></div></section>
 <section><h2>useEffect</h2><pre><code>useEffect(() => {
-  // side effect
+	// side effect
 }, [deps])</code></pre></section>
-<section><h2>Effect Lifecycle</h2><div class=diagram>Render -> Deps Changed?
-No -> Skip
-Yes -> Cleanup -> Effect</div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Stopwatch</h1><p>Intervals • Cleanup</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Pokédex</h1><p>Fetch • Loading • useEffect</p></div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Snake</h1><p>Keyboard • Game Loop • Effects</p></div></section>
-<section><h2>useContext</h2><pre><code>const theme = useContext(ThemeContext)</code></pre><div class=diagram>Provider -> Components</div></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Theme Switcher</h1><p>Context</p></div></section>
-<section><h2>Routing</h2><div class=diagram>URL -> Router -> Page</div><pre><code>&lt;BrowserRouter&gt;
-&lt;Routes&gt;
-&lt;Route /&gt;
-&lt;/Routes&gt;</code></pre></section>
-<section><div class=live><h2>LIVE CODING</h2><h1>Homepage</h1><p>React Router • Navigation</p></div></section>
-<section><h2>Deploy to Vercel</h2><div class=diagram>GitHub -> Vercel -> Live Site</div></section>
-<section><h1>Questions?</h1></section>
-</div></div>
+<section><h2>Component Lifecycle</h2><img src="https://i.sstatic.net/hor0H.jpg"></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Stopwatch</h1><p>Effects & Timing</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Pizza Builder</h1><p>Effects & Canvas</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Pokédex</h1><p>Fetching URLs</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Snake</h1><p>Keyboard Events & Game Loop</p></div></section>
+<section><h2>React Routing</h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwMovqc8K1H2gdqkIGaParhoj95TxoueMLbCurhYZ3Aw&s=10"></section>
+<section><h2>React Router</h2><pre><code>&lt;BrowserRouter&gt;
+  &lt;Routes&gt;
+    &lt;Route path="/" element={&lt;Home/&gt;} /&gt;
+    &lt;Route path="/about" element={&lt;About/&gt;} /&gt;
+  &lt;/Routes&gt;
+&lt;/BrowserRouter&gt;
+</code></pre><pre><code>&lt;Link to="/about"&gt;About&lt;/Link&gt;</code></pre></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Homepage</h1><p>React Router & Navigation</p></div></section>
+<section><h2>Deploy to Vercel</h2><div class="diagram">GitHub -> Vercel -> Live Site</div></section>
+<section>
+  <h2>Now you know...</h2>
+
+  <ul>
+    <li> JSX & Components </li>
+    <li> Prop, State & Context </li>
+    <li> Event </li>
+    <li> Effect & Ref</li>
+	<li> Fetching URLs</li>
+    <li> React Routing</li>
+  </ul>
+</section>
+<section>
+  <h3>Go build something awesome! </h3>
+  <h4>Happy coding. 💙</h4>
+  Slides @
+  	<a href="https://maybegowtham.github.io/react_playground" target="_blank" rel="noopener noreferrer">
+		maybegowtham.github.io/react_playground
+	</a>
+</section>
+
+</div>
+</div>
+
+<a class="slide-footer" href="https://maybegowtham.github.io/react_playground" target="_blank" rel="noopener noreferrer">
+slides @ maybegowtham.github.io/react_playground
+</a>
+
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
-<script>Reveal.initialize({hash:true,slideNumber:true,plugins:[RevealHighlight]});</script>
-</body></html>
+<script>
+Reveal.initialize({hash:true,slideNumber:true,plugins:[RevealHighlight]});
+</script>
+</body>
+</html>

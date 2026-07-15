@@ -107,7 +107,7 @@ export default function Snake() {
     <main onKeyDown={keyDown} tabIndex={0} autoFocus>
       <h1>🐍 Snake</h1>
 
-      <p>Score: {game.score}</p>
+      <h2>Score: {game.score}</h2>
 
       <table>
         <tbody>

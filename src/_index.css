@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.5;
+
+  --background: #f8f8f8;
+  --text: #222;
+  --surface: white;
+  --border: #ccc;
+  --muted: #666;
+  --code: #eee;
+}
+
+.dark {
+  --background: #181818;
+  --text: #eee;
+  --surface: #242424;
+  --border: #555;
+  --muted: #aaa;
+  --code: #333;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}
+
+#root {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Layout */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+small {
+  color: var(--muted);
+}
+
+/* Forms */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Lists */
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+li {
+  padding: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+td {
+  padding: 0;
+}
+
+td button {
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  border-radius: 0;
+}
+
+/* Fieldsets */
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+  display: none;
+}
+
+fieldset label:has(input:checked) {
+  outline: 2px solid royalblue;
+  border-radius: 8px;
+}
+
+/* Navigation / Groups */
+
+form,
+nav,
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Misc */
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  background: var(--code);
+}
+
+pre {
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--code);
+}

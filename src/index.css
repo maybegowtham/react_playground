@@ -1,0 +1,16 @@
+p {
+	font-size: xx-large;
+}
+
+body {
+	padding: 6px;
+	margin: 8px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 5px;
+}
+
+table {
+	border-collapse: collapse;
+}

@@ -14,13 +14,9 @@ const PRICES = {
   "🫑": 30,
 };
 
-const BASE_PRICE = 299;
-const SIZE = 500;
-
-export default function PizzaBuilder() {
+export default function PizzaBuilder({ SIZE }) {
   const {name} = useContext(NameContext);
   const canvasRef = useRef(null);
-
   const [selected, setSelected] = useState(TOPPINGS[0]);
   const [pizza, setPizza] = useState([]);
 
@@ -34,13 +30,15 @@ export default function PizzaBuilder() {
       },
     ]);
   }
+
   function calculateTotal() {
-	let total = BASE_PRICE;
+	let total = 299;
 	for(let topping of pizza) {
 		total += PRICES[topping.topping]
 	}
 	return total;
   }
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");

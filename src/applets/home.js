@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/crystal-ball" element={<CrystalBall />} />
           <Route path="/todo" element={<TodoApp />} />
           <Route path="/duck-hunt" element={<DuckHunt />} />
-          <Route path="/pizza" element={<PizzaBuilder />} />
+          <Route path="/pizza" element={<PizzaBuilder SIZE={500}/>} />
           <Route path="/tictactoe" element={<TicTacToe />} />
           <Route path="/snake" element={<Snake />} />
           <Route path="/pokedex" element={<Pokedex />} />

@@ -49,6 +49,10 @@ package.json</code></pre></section>
 <section><h2>Rendering</h2><img src="https://www.bacancytechnology.com/blog/wp-content/uploads/2023/04/Initial-Render.webp"></section>
 <section><h2>useState</h2><pre><code>const [state, setState] = useState(...)</code></pre></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Counter</h1><p>Events & State</p></div></section>
+<section><h2>useRef</h2>
+<pre><code>const inputRef = useRef(null)</code></pre>
+<pre><code class="language-html">&lt;input ref={inputRef} /&gt;</code></pre>
+</section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Crystal Ball</h1><p>Randomness & & Timing</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Duck Hunt</h1><p>Mouse Events & Timing</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Todo App</h1><p>Lists & Refs</p></div></section>
@@ -58,11 +62,63 @@ package.json</code></pre></section>
 }, [deps])</code></pre></section>
 <section><h2>Component Lifecycle</h2><img src="https://i.sstatic.net/hor0H.jpg"></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Stopwatch</h1><p>Effects & Timing</p></div></section>
+<section>
+  <h2>Canvas: Paths</h2>
+
+  <pre><code>// Start a new path
+ctx.beginPath()</code></pre>
+
+  <pre><code>// Add to the path
+ctx.moveTo(x, y)
+ctx.lineTo(x, y)
+ctx.arc(x, y, radius, startAngle, endAngle)</code></pre>
+
+  <pre><code>// Draw the path
+ctx.stroke()
+ctx.fill()</code></pre>
+
+</section>
+<section>
+  <h2>Canvas: Images, Text & Shapes</h2>
+
+  <pre><code>// Images
+ctx.drawImage(image, x, y)</code></pre>
+
+  <pre><code>// Text
+ctx.font = "32px sans-serif"
+ctx.fillText(text, x, y)
+ctx.strokeText(text, x, y)</code></pre>
+
+  <pre><code>// Convenience Shapes
+ctx.fillRect(x, y, width, height)
+ctx.strokeRect(x, y, width, height)
+ctx.clearRect(x, y, width, height)</code></pre>
+</section>
+<section>
+  <h2>Canvas: Styling</h2>
+
+  <pre><code>// Colors
+ctx.fillStyle = "tomato"
+ctx.strokeStyle = "black"</code></pre>
+
+  <pre><code>// Stroke
+ctx.lineWidth = 4
+ctx.lineCap = "round"
+ctx.lineJoin = "round"</code></pre>
+
+  <pre><code>// Text
+ctx.font = "32px sans-serif"
+ctx.textAlign = "center"
+ctx.textBaseline = "middle"</code></pre>
+
+  <pre><code>// Transparency
+ctx.globalAlpha = 0.5</code></pre>
+</section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Pizza Builder</h1><p>Effects & Canvas</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Pokédex</h1><p>Fetching URLs</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Snake</h1><p>Keyboard Events & Game Loop</p></div></section>
 <section><h2>React Routing</h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwMovqc8K1H2gdqkIGaParhoj95TxoueMLbCurhYZ3Aw&s=10"></section>
-<section><h2>React Router</h2><pre><code>&lt;BrowserRouter&gt;
+<section><h2>Using React Routing</h2><pre><code>&lt;BrowserRouter&gt;
   &lt;Routes&gt;
     &lt;Route path="/" element={&lt;Home/&gt;} /&gt;
     &lt;Route path="/about" element={&lt;About/&gt;} /&gt;
@@ -70,6 +126,14 @@ package.json</code></pre></section>
 &lt;/BrowserRouter&gt;
 </code></pre><pre><code>&lt;Link to="/about"&gt;About&lt;/Link&gt;</code></pre></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Homepage</h1><p>React Router & Navigation</p></div></section>
+<section><h2>Context</h2><img src="https://miro.medium.com/0*n9UZ8OPkkKVN06SW.png"></section>
+<section><h2>useContext</h2>
+<pre><code>const NameContext = createContext();
+&lt;NameContext.Provider value="Gowtham"&gt;
+  &lt;Greeting /&gt; // all of its descendents can get the context
+&lt;/NameContext.Provider&gt;</code></pre>
+<pre><code>const name = useContext(NameContext)></code></pre>
+</section>
 <section><h2>Deploy to Vercel</h2><div class="diagram">GitHub -> Vercel -> Live Site</div></section>
 <section>
   <h2>Now you know...</h2>
@@ -102,7 +166,19 @@ slides @ maybegowtham.github.io/react_playground
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
 <script>
-Reveal.initialize({hash:true,slideNumber:true,plugins:[RevealHighlight]});
+document.querySelectorAll("pre code").forEach(code => {
+  if (!code.className) {
+    code.classList.add("language-javascript");
+  }
+});
+Reveal.initialize({
+  hash: true,
+  slideNumber: true,
+  plugins: [RevealHighlight],
+  highlight: {
+    defaultLanguage: "language-jsx"
+  }
+});
 </script>
 </body>
 </html>

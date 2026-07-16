@@ -30,11 +30,7 @@ export default function Snake() {
           game.direction
         );
 
-        const outside =
-          head.x < 0 ||
-          head.x >= SIZE ||
-          head.y < 0 ||
-          head.y >= SIZE;
+        const outside = head.x < 0 || head.x >= SIZE || head.y < 0 || head.y >= SIZE;
 
         if (outside) {
           return {
@@ -96,10 +92,8 @@ export default function Snake() {
   function color(cell) {
     if (game.snake.some(s => equal(s, cell)))
       return "green";
-
     if (equal(game.food, cell))
       return "red";
-
     return "white";
   }
 

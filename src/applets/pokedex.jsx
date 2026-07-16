@@ -3,9 +3,7 @@ import { NameContext } from "./App";
 
 export default function Pokedex() {
 	const { name: username } = useContext(NameContext);
-
 	const inputRef = useRef(null);
-
 	const [pokemon, setPokemon] = useState(null);
 	const [error, setError] = useState("");
 

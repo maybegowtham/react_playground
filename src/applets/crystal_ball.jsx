@@ -3,7 +3,6 @@ import { NameContext } from "./App"
 
 export default function CrystalBall({ probability }) {
 	const { name } = useContext(NameContext);
-
 	const [answer, setAnswer] = useState("");
 
 	function predict() {

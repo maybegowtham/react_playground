@@ -17,7 +17,7 @@ export default function DuckHunt({ width, height }) {
 			setDuck({
 				x: duck.x,
 				y: duck.y,
-				alive: false,
+				alive: false
 			});
 			setTimeout(() => {
 				setDuck({

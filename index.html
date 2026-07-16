@@ -18,6 +18,32 @@
       text-decoration:none;font-family:monospace;z-index:100;
     }
     .slide-footer:hover{color:#fff;text-decoration:underline}
+	.live {
+	position: relative;
+	padding-bottom: 2em;
+	}
+
+	.live-footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 8px;
+
+	text-align: center;
+	font-size: 0.64em;
+	opacity: 0.6;
+	font-family: monospace;
+	}
+
+	.live-footer a {
+	color: inherit;
+	text-decoration: none;
+	}
+
+	.live-footer a:hover {
+	text-decoration: underline;
+	opacity: 1;
+	}
   </style>
 </head>
 <body>
@@ -26,6 +52,9 @@
 
 <section><h1>React Crash Course</h1></section>
 <section><h2>Introduction to the Web</h2><div class="diagram">Browser → HTTP → Server</div><p>HTML & CSS & JavaScript</p></section>
+<section><img src="https://fly.io/laravel-bytes/inertia-ssr-laravel-fly/assets/img_2.jpg?card"></section>
+<section><img src="https://i.programmerhumor.io/2022/12/programmerhumor-io-javascript-memes-frontend-memes-c720542cb68e810.jpg"></section>
+<section><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnwukorKPrXPo6IEeE7UXLI-NFSGp_dkBzu_ZfGu0XM8GtM9ARUIQmYBM9&s=10"></section>
 <section><h2>What is React?</h2><div class="diagram">UI = f(state)</div></section>
 <section><h2>Folder Structure</h2><pre><code>src/
   main.jsx
@@ -37,24 +66,24 @@ package.json</code></pre></section>
 <section><h2>Components</h2><pre><code>function Greeting() {
   return <h1>Hello, Gowtham!</h1>;
 }</code></pre></section>
-<section><h2>Browser DevTools</h2><ul><li>Elements</li><li>Console</li><li>Network</li></ul></section>
-<section><h2>React DevTools</h2><ul><li>Components</li><li>Props</li><li>State</li></ul></section>
 <section><h2>Props</h2>
 	<div class="diagram">Parent --props--> Child</div>
 	<pre><code>function Greeting({ name }) {
-	return <h1>Hello, {name}!</h1>;
-}</code></pre>
+		return <h1>Hello, {name}!</h1>;
+	}</code></pre>
 </section>
 <section><h2>Events</h2><pre><code>&lt;button onClick={handleClick}&gt;</code></pre></section>
 <section><h2>Rendering</h2><img src="https://www.bacancytechnology.com/blog/wp-content/uploads/2023/04/Initial-Render.webp"></section>
 <section><h2>useState</h2><pre><code>const [state, setState] = useState(...)</code></pre></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Counter</h1><p>Events & State</p></div></section>
-<section><h2>useRef</h2>
-<pre><code>const inputRef = useRef(null)</code></pre>
-<pre><code class="language-html">&lt;input ref={inputRef} /&gt;</code></pre>
-</section>
-<section><div class="live"><h2>Let's build a...</h2><h1>Crystal Ball</h1><p>Randomness & & Timing</p></div></section>
+<section><h2>Browser DevTools</h2><ul><li>Elements</li><li>Console</li><li>Network</li></ul></section>
+<section><h2>React DevTools</h2><ul><li>Components</li><li>Props</li><li>State</li></ul></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Crystal Ball</h1><p>Randomness & Timing</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Duck Hunt</h1><p>Mouse Events & Timing</p></div></section>
+<section><h2>useRef</h2>
+	<pre><code>const inputRef = useRef(null)</code></pre>
+	<pre><code class="language-html">&lt;input ref={inputRef} /&gt;</code></pre>
+</section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Todo App</h1><p>Lists & Refs</p></div></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Tic Tac Toe</h1><p>2D Lists & Logic</p></div></section>
 <section><h2>useEffect</h2><pre><code>useEffect(() => {
@@ -62,6 +91,34 @@ package.json</code></pre></section>
 }, [deps])</code></pre></section>
 <section><h2>Component Lifecycle</h2><img src="https://i.sstatic.net/hor0H.jpg"></section>
 <section><div class="live"><h2>Let's build a...</h2><h1>Stopwatch</h1><p>Effects & Timing</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Pokédex</h1><p>Fetching URLs</p></div></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Snake</h1><p>Keyboard Events & Game Loop</p></div></section>
+<section><h2>React Routing</h2><img src="https://images-www.contentful.com/fo9twyrwpveg/VYbtYd1BZWvGTwXK1UdeZ/6c8f42794a0aa9dc91552791c3977f7b/image1.png?w=1200&q=65&fm=avif"></section>
+<section><h2>Using React Routing</h2><pre><code>&lt;BrowserRouter&gt;
+  &lt;Routes&gt;
+    &lt;Route path="/" element={&lt;Home/&gt;} /&gt;
+    &lt;Route path="/about" element={&lt;About/&gt;} /&gt;
+  &lt;/Routes&gt;
+&lt;/BrowserRouter&gt;
+</code></pre><pre><code>&lt;Link to="/about"&gt;About&lt;/Link&gt;</code></pre></section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Homepage</h1><p>React Router & Navigation</p></div></section>
+<section><h2>Context</h2><img src="https://miro.medium.com/0*n9UZ8OPkkKVN06SW.png"></section>
+<section><h2>useContext</h2>
+<pre><code>const NameContext = createContext();
+&lt;NameContext.Provider value="Gowtham"&gt;
+  &lt;Greeting /&gt; // all of its descendents can get the context
+&lt;/NameContext.Provider&gt;</code></pre>
+<pre><code>const name = useContext(NameContext)></code></pre>
+</section>
+<section><h2>Deploy to Vercel</h2>
+<div >GitHub -> Vercel -> Live Site</div>
+<div>
+	live @ <a html="https://react-playground-peach-alpha.vercel.app/"> react-playground-peach-alpha.vercel.app </a>
+</div>
+</section>
+<section>
+	BONUS
+</section>
 <section>
   <h2>Canvas: Paths</h2>
 
@@ -76,7 +133,6 @@ ctx.arc(x, y, radius, startAngle, endAngle)</code></pre>
   <pre><code>// Draw the path
 ctx.stroke()
 ctx.fill()</code></pre>
-
 </section>
 <section>
   <h2>Canvas: Images, Text & Shapes</h2>
@@ -114,27 +170,16 @@ ctx.textBaseline = "middle"</code></pre>
   <pre><code>// Transparency
 ctx.globalAlpha = 0.5</code></pre>
 </section>
-<section><div class="live"><h2>Let's build a...</h2><h1>Pizza Builder</h1><p>Effects & Canvas</p></div></section>
-<section><div class="live"><h2>Let's build a...</h2><h1>Pokédex</h1><p>Fetching URLs</p></div></section>
-<section><div class="live"><h2>Let's build a...</h2><h1>Snake</h1><p>Keyboard Events & Game Loop</p></div></section>
-<section><h2>React Routing</h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwMovqc8K1H2gdqkIGaParhoj95TxoueMLbCurhYZ3Aw&s=10"></section>
-<section><h2>Using React Routing</h2><pre><code>&lt;BrowserRouter&gt;
-  &lt;Routes&gt;
-    &lt;Route path="/" element={&lt;Home/&gt;} /&gt;
-    &lt;Route path="/about" element={&lt;About/&gt;} /&gt;
-  &lt;/Routes&gt;
-&lt;/BrowserRouter&gt;
-</code></pre><pre><code>&lt;Link to="/about"&gt;About&lt;/Link&gt;</code></pre></section>
-<section><div class="live"><h2>Let's build a...</h2><h1>Homepage</h1><p>React Router & Navigation</p></div></section>
-<section><h2>Context</h2><img src="https://miro.medium.com/0*n9UZ8OPkkKVN06SW.png"></section>
-<section><h2>useContext</h2>
-<pre><code>const NameContext = createContext();
-&lt;NameContext.Provider value="Gowtham"&gt;
-  &lt;Greeting /&gt; // all of its descendents can get the context
-&lt;/NameContext.Provider&gt;</code></pre>
-<pre><code>const name = useContext(NameContext)></code></pre>
+<section><div class="live"><h2>Let's build a...</h2><h1>Smiley</h1><p>Mouse Event & Canvas</p></div></section>
+<section>
+<div style="background-color: whitesmoke; display: inline-block;">
+	<img src="https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/sneha-c-polar-coordinates-09-1605002839.png" height="500">
+</div>
 </section>
-<section><h2>Deploy to Vercel</h2><div class="diagram">GitHub -> Vercel -> Live Site</div></section>
+<section>
+	<img src="https://i.pinimg.com/564x/c3/30/a9/c330a9aa0b1b912818d98b0cf29b720e.jpg">
+</section>
+<section><div class="live"><h2>Let's build a...</h2><h1>Pizza Builder</h1><p>Effects & Canvas</p></div></section>
 <section>
   <h2>Now you know...</h2>
 
@@ -143,8 +188,9 @@ ctx.globalAlpha = 0.5</code></pre>
     <li> Prop, State & Context </li>
     <li> Event </li>
     <li> Effect & Ref</li>
+	<li> Drawing to Canvas</li>
 	<li> Fetching URLs</li>
-    <li> React Routing</li>
+    <li> Page Routing</li>
   </ul>
 </section>
 <section>
@@ -166,6 +212,23 @@ slides @ maybegowtham.github.io/react_playground
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
 <script>
+
+const slidesUrl = "https://maybegowtham.github.io/react_playground";
+
+document.querySelectorAll(".live").forEach(slide => {
+  const footer = document.createElement("div");
+  footer.className = "live-footer";
+
+  footer.innerHTML = `
+    code @
+    <a href="${slidesUrl}" target="_blank" rel="noopener noreferrer">
+      https://github.com/maybegowtham/react_playground
+    </a>
+  `;
+
+  slide.appendChild(footer);
+});
+
 document.querySelectorAll("pre code").forEach(code => {
   if (!code.className) {
     code.classList.add("language-javascript");

@@ -1,0 +1,17 @@
+function drawEye(ctx, x, y, angle) {
+  // Eye white
+  ctx.beginPath();
+  ctx.arc(x, y, 20, 0, Math.PI * 2);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.stroke();
+
+  // Pupil
+  const pupilX = x + Math.cos(angle) * 8;
+  const pupilY = y + Math.sin(angle) * 8;
+
+  ctx.beginPath();
+  ctx.arc(pupilX, pupilY, 8, 0, Math.PI * 2);
+  ctx.fillStyle = "black";
+  ctx.fill();
+}

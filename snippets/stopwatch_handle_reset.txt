@@ -1,0 +1,4 @@
+	function handleReset() {
+		setRunning(false);
+		setSeconds(0);
+	}

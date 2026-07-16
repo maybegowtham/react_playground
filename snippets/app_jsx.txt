@@ -1,0 +1,19 @@
+	return (
+		<NameContext.Provider value={{ name, setName }}>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/counter" element={<Counter initialCount={5} min={0} max={10} step={1} />} />
+					<Route path="/stopwatch" element={<Stopwatch />} />
+					<Route path="/crystal-ball" element={<CrystalBall probability={0.5} />} />
+					<Route path="/todo" element={<TodoApp />} />
+					<Route path="/duck-hunt" element={<DuckHunt height={500} width={500} />} />
+					<Route path="/smiley" element={<Smiley/>} />
+					<Route path="/pizza" element={<PizzaBuilder size={500} />} />
+					<Route path="/tictactoe" element={<TicTacToe />} />
+					<Route path="/snake" element={<Snake size={10} />} />
+					<Route path="/pokedex" element={<Pokedex />} />
+				</Routes>
+			</BrowserRouter>
+		</NameContext.Provider>
+	);

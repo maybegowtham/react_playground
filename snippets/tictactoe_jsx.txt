@@ -1,0 +1,29 @@
+	return (
+		<main>
+			<h1>Tic Tac Toe</h1>
+			<h2>
+				{winner(board) === 0 ? `${SYMBOLS[turn]}'s turn` : `${SYMBOLS[winner(board)]} wins!`}
+			</h2>
+			<table
+				style={{ fontFamily: "monospace" }}>
+				<tbody>
+					{board.map((row, r) => (
+						<tr key={r}>
+							{row.map((cell, c) => (
+								<td
+									key={c}
+									onClick={() => play(r, c)}
+									style={{ border: "1px solid" }}
+								>
+									{SYMBOLS[cell]}
+								</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+			<p>
+				<button onClick={reset}>Reset</button>
+			</p>
+		</main>
+	);

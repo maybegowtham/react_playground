@@ -1,0 +1,13 @@
+	return (
+		<main>
+			<h1>Stopwatch</h1>
+
+			<h2>{seconds} seconds</h2>
+
+			<button onClick={handleStart}> Start </button>
+
+			<button onClick={handleStop}> Stop </button>
+
+			<button onClick={handleReset}> Reset </button>
+		</main>
+	);

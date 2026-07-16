@@ -1,0 +1,5 @@
+	function toggleDone(index) {
+		const nextTodos = [...todos];
+		nextTodos[index].done = !nextTodos[index].done;
+		setTodos(nextTodos);
+	}

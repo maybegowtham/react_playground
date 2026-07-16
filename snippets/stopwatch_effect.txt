@@ -1,0 +1,9 @@
+	useEffect(() => {
+		if (running) {
+			const interval = setInterval(handleTick, 1000);
+
+			return function cleanup() {
+				clearInterval(interval);
+			};
+		}
+	}, [running]);

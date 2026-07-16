@@ -1,0 +1,30 @@
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    function draw() {
+      ctx.clearRect(0, 0, 400, 400);
+
+      // Face
+      ctx.beginPath();
+      ctx.arc(200, 200, 120, 0, Math.PI * 2);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+      ctx.stroke();
+
+      // Angles from each eye to the mouse
+      const leftAngle = Math.atan2(mouse.y - 160, mouse.x - 150);
+      const rightAngle = Math.atan2(mouse.y - 160, mouse.x - 250);
+
+      // Eyes
+      drawEye(ctx, 150, 160, leftAngle);
+      drawEye(ctx, 250, 160, rightAngle);
+
+      // Smile
+      ctx.beginPath();
+      ctx.arc(200, 210, 60, 0, Math.PI);
+      ctx.stroke();
+    }
+
+    draw();
+  }, [mouse]);

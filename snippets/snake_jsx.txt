@@ -1,0 +1,27 @@
+	return (
+		<main onKeyDown={handleKeyDown} tabIndex={0} autoFocus>
+			<h1>🐍 Snake</h1>
+
+			<h2>Score: {score}</h2>
+
+			<table>
+				<tbody>
+					{Array.from({ length: size }, (_, y) => (
+						<tr key={y}>
+							{Array.from({ length: size }, (_, x) => (
+								<td
+									key={x}
+									style={{
+										width: 25,
+										height: 25,
+										border: "1px solid",
+										background: color(x, y),
+									}}
+								/>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</main>
+	);

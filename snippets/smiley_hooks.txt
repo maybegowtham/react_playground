@@ -1,0 +1,2 @@
+  const canvasRef = useRef(null);
+  const [mouse, setMouse] = useState({ x: 200, y: 200 });

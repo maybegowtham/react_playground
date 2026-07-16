@@ -1,0 +1,36 @@
+	return (
+		<main>
+			<h1>
+				🔴 Gotta catch 'em all, {username || "???"}!
+			</h1>
+
+			<form onSubmit={search}>
+				<input
+					ref={inputRef}
+					placeholder="Pokemon name"
+				/>
+			</form>
+
+			{error && <p>{error}</p>}
+
+			{pokemon && (
+				<section>
+					<h2>{pokemon.name}</h2>
+
+					<img src={pokemon.image} />
+
+					<h3>
+						Height {pokemon.height} | Weight {pokemon.weight}
+					</h3>
+
+					<h3>Types</h3>
+
+					<ul>
+						{pokemon.types.map(type => (
+							<li key={type}>{type}</li>
+						))}
+					</ul>
+				</section>
+			)}
+		</main>
+	);

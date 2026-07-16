@@ -1,0 +1,7 @@
+	const { name } = useContext(NameContext)
+	const [score, setScore] = useState(0);
+	const [duck, setDuck] = useState({
+		x: width / 2,
+		y: height / 2,
+		alive: true,
+	});

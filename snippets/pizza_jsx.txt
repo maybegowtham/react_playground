@@ -1,0 +1,32 @@
+	return (
+		<main>
+			<h1>🍕 Make a pizza, {name || "???"} </h1>
+
+			<h2>Toppings: {pizza.length}</h2>
+
+			<p>
+				{TOPPINGS.map((topping) => (
+					<button
+						key={topping}
+						disabled={selected === topping}
+						onClick={() => setSelected(topping)}
+					>
+						{topping}
+					</button>
+				))}
+			</p>
+
+			<canvas
+				ref={canvasRef}
+				width={size}
+				height={size}
+				onClick={handlePizzaClick}
+				style={{
+					width: size,
+					height: size,
+					border: "1px solid #ddd",
+					cursor: "crosshair",
+				}}
+			/>
+		</main>
+	);

@@ -1,0 +1,11 @@
+	function addTodo(e) {
+		e.preventDefault();
+		const text = inputRef.current.value;
+		const nextTodos = [...todos];
+		nextTodos.push({
+			text,
+			done: false,
+		});
+		setTodos(nextTodos);
+		inputRef.current.value = "";
+	}

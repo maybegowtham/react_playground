@@ -1,0 +1,10 @@
+	function handleKeyDown(e) {
+		if (e.key === "ArrowUp")
+			setDirection({ x: 0, y: -1 });
+		if (e.key === "ArrowDown")
+			setDirection({ x: 0, y: 1 });
+		if (e.key === "ArrowLeft")
+			setDirection({ x: -1, y: 0 });
+		if (e.key === "ArrowRight")
+			setDirection({ x: 1, y: 0 });
+	}

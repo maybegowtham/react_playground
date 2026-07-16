@@ -1,0 +1,7 @@
+	function editTodo(index) {
+		const text = prompt("Edit todo", todos[index].text);
+		if (!text?.trim()) return;
+		const nextTodos = [...todos];
+		nextTodos[index].text = text;
+		setTodos(nextTodos);
+	}

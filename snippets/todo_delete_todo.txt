@@ -1,0 +1,9 @@
+	function deleteTodo(index) {
+		const nextTodos = [];
+		for (let i = 0; i < todos.length; i++) {
+			if (i !== index) {
+				nextTodos.push(todos[i]);
+			}
+		}
+		setTodos(nextTodos);
+	}

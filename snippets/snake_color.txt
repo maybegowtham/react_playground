@@ -1,0 +1,9 @@
+	function color(x, y) {
+		if (snake.some(cell => cell.x === x && cell.y === y))
+			return "green";
+
+		if (food.x === x && food.y === y)
+			return "red";
+
+		return "white";
+	}

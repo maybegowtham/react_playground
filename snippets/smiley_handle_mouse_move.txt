@@ -1,0 +1,8 @@
+  function handleMouseMove(e) {
+    const rect = canvasRef.current.getBoundingClientRect();
+
+    setMouse({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }

@@ -1,0 +1,10 @@
+	function handlePizzaClick(e) {
+		setPizza((pizza) => [
+			...pizza,
+			{
+				topping: selected,
+				x: e.nativeEvent.offsetX,
+				y: e.nativeEvent.offsetY,
+			},
+		]);
+	}

@@ -1,0 +1,2 @@
+	const { name } = useContext(NameContext);
+	const [answer, setAnswer] = useState("");

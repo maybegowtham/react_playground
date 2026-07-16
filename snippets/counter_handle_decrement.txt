@@ -1,0 +1,7 @@
+	function handleDecrement() {
+		if (count - step >= min) {
+			setCount(count - step);
+		} else {
+			// no op
+		}
+	}

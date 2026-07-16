@@ -1,0 +1,29 @@
+	return (
+		<main>
+			<h1>📝 Get things done, {name == "" ? "???" : name}!</h1>
+
+			<form onSubmit={addTodo}>
+				<input
+					ref={inputRef}
+					placeholder="Task"
+				/>
+			</form>
+
+			<ol>
+				{todos.map((todo, i) => (
+					<li key={i}>
+						<span onClick={() => toggleDone(i)}>
+							{todo.done ? <s>{todo.text}</s> : todo.text}
+						</span>
+
+						<button onClick={() => editTodo(i)}>
+							Edit
+						</button>
+
+						<button onClick={() => deleteTodo(i)}>
+							Delete
+						</button>
+					</li>
+				))}
+			</ol>
+		</main>

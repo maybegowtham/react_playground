@@ -1,0 +1,12 @@
+  return (
+	<>
+		<h1>Bob</h1>
+		<canvas
+		ref={canvasRef}
+		width={400}
+		height={400}
+		onMouseMove={handleMouseMove}
+		style={{ border: "1px solid black" }}
+		/>
+	</>
+  );

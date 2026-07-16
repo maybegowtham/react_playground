@@ -1,0 +1,7 @@
+	function handleIncrement() {
+		if (count + step <= max) {
+			setCount(count + step);
+		} else {
+			// no op
+		}
+	}

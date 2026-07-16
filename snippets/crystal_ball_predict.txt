@@ -1,0 +1,6 @@
+	function predict() {
+		setAnswer(null);
+		setTimeout(() => {
+			setAnswer(Math.random() < probability ? "Yes" : "No");
+		}, 2000);
+	}

@@ -1,0 +1,4 @@
+	const { name } = useContext(NameContext);
+	const canvasRef = useRef(null);
+	const [selected, setSelected] = useState(TOPPINGS[0]);
+	const [pizza, setPizza] = useState([]);

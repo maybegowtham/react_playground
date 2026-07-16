@@ -1,0 +1,13 @@
+function play(row, col) {
+		if (winner(board) !== 0) {
+			// cant make moves after someone won
+		} else if (board[row][col] !== 0) {
+			// cant override a cell
+		} else {
+			const nextBoard = board.map(row => [...row]);
+			nextBoard[row][col] = turn;
+
+			setBoard(nextBoard);
+			setTurn(turn === 1 ? 2 : 1);
+		}
+	}

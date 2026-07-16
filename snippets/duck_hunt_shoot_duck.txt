@@ -1,0 +1,18 @@
+	function shootDuck() {
+		if (duck.alive) {
+			setScore(score => score + 1);
+
+			setDuck({
+				x: duck.x,
+				y: duck.y,
+				alive: false,
+			});
+			setTimeout(() => {
+				setDuck({
+					x: Math.random() * (width - 40),
+					y: Math.random() * (height - 40),
+					alive: true,
+				});
+			}, 200);
+		}
+	}

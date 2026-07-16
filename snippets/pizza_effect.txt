@@ -1,0 +1,21 @@
+	useEffect(() => {
+		const canvas = canvasRef.current;
+		const ctx = canvas.getContext("2d");
+
+		const image = new Image();
+		image.src = base;
+
+		image.onload = () => {
+			ctx.clearRect(0, 0, size, size);
+
+			// Draw pizza base.
+			ctx.drawImage(image, 0, 0, size, size);
+
+			// Draw toppings.
+			ctx.font = "28px serif";
+			ctx.textAlign = "center";
+			pizza.forEach(({ topping, x, y }) => {
+				ctx.fillText(topping, x, y);
+			});
+		};
+	}, [pizza, size]);

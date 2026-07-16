@@ -1,0 +1,3 @@
+	const { name } = useContext(NameContext);
+	const inputRef = useRef();
+	const [todos, setTodos] = useState([]);

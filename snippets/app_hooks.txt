@@ -1,14 +1,2 @@
-import { createContext, useContext, useState } from "react";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+	const [name, setName] = useState("");
 
-import Counter from "./counter";
-import Stopwatch from "./stopwatch";
-import CrystalBall from "./crystal_ball";
-import DuckHunt from "./duck_hunt";
-import PizzaBuilder from "./pizza";
-import TicTacToe from "./tictactoe";
-import TodoApp from "./todo";
-import Snake from "./snake";
-import Pokedex from "./pokedex";
-import Home from "./home";
-import Smiley from "./smiley";
